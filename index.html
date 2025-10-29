@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zedfolio | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* Hero Section Styling */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      color: #ffffff;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      min-height: 1.5em;
+      letter-spacing: 0.5px;
+    }
+
+    /* Curseur clignotant */
+    .cursor {
+      display: inline-block;
+      background-color: #ffffff;
+      width: 2px;
+      margin-left: 2px;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
+
+    /* Animation de fade-in & slide */
+    .fade-in {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeSlideIn 0.3s forwards;
+    }
+
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+        color: #fb00ff;
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        color: #ffffff;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .hero .btn {
+        font-size: 0.9rem;
+      }
+    }
+</style>
+</head>
+<body>
+  <!-- Navbar -->
+    <div class="navbar-container">
+    <header class="navbar">
+        <div class="navbar-content"> 
+            <a href="#hero" class="logo">
+              <div>Zedfolio<span>.</span></div>
+            </a>
+            <nav id="nav-links">
+                <a href="#about">About</a>                
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+        <div class="nav-actions">
+            <i class="fas fa-moon theme-toggle" id="theme-toggle"></i>
+            <i class="fas fa-bars burger" id="burger"></i>
+            
+        </div>
+    </header>
+    </div>
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <h1>Hey, I'm <span>Zed</span></h1>
+    <p class="typed-text"></p>
+    <span class="cursor">&nbsp;</span>
+    <a href="#about" class="btn"><i class="fas fa-user"></i> About Me</a>
+  </section>
+
+  <!-- About -->
+  <section style="display: flex; flex-direction: column; align-items: center;" id="about" class="section about">
+    <h2>Zed MULINDWA</h2>
+    <p class="fade-in"> <i class="fas fa-user"></i>  About Me</p>
+    <div style=" text-align: center; width: 100%; padding: 20px;" class="about-content">
+      <img style="width: 200px; height: 200px; overflow: hidden; border: 10px solid #23062635; border-radius: 50%;" src="img/extended-logo.png" alt="Zed Profile Picture" class="profile-pic" />
+    </div>
+    <p>
+      I’m a software engineering student passionate about web development, AI, and smart systems.  
+      My mindset? <b>Discipline over hype. Progress over perfection.</b>  
+      I create clean, scalable, and meaningful digital experiences.
+    </p>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section skills">
+    <h2><i class="fas fa-code"></i> Skills</h2>
+    <div class="skills-grid">
+      <div class="skill">
+        <div class="skill-header">
+          <i class="fab fa-html5"></i><span>HTML</span>
+        </div>
+        <div class="skill-bar"><div class="progress" data-progress="95"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-header">
+          <i class="fab fa-css3-alt"></i><span>CSS</span>
+        </div>
+        <div class="skill-bar"><div class="progress" data-progress="90"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-header">
+          <i class="fab fa-js"></i><span>JavaScript</span>
+        </div>
+        <div class="skill-bar"><div class="progress" data-progress="85"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-header">
+          <i class="fab fa-python"></i><span>Python</span>
+        </div>
+        <div class="skill-bar"><div class="progress" data-progress="80"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-header">
+          <i class="fab fa-react"></i><span>React</span>
+        </div>
+        <div class="skill-bar"><div class="progress" data-progress="70"></div></div>
+      </div>
+    </div>
+  </section>
+  <!-- Experience & Education -->
+    <section id="experience" class="section experience">
+    <h2><i class="fas fa-briefcase"></i> Experience & Education</h2>
+    <div class="timeline">
+        <div class="timeline-item fade-in">
+        <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="timeline-content">
+            <h3>Bachelor in Software Engineering</h3>
+            <p class="time">2022 – Present</p>
+            <p>Building strong foundations in algorithms, AI, and smart systems.  
+            Constantly learning to create scalable, meaningful solutions.</p>
+        </div>
+        </div>
+
+        <div class="timeline-item fade-in">
+        <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
+        <div class="timeline-content">
+            <h3>Freelance Web Developer</h3>
+            <p class="time">2023 – Present</p>
+            <p>Worked on real projects involving Django, React, and IoT dashboards.  
+            Focused on clarity, performance, and clean architecture.</p>
+        </div>
+        </div>
+
+        <div class="timeline-item fade-in">
+        <div class="timeline-icon"><i class="fas fa-robot"></i></div>
+        <div class="timeline-content">
+            <h3>AI & Smart Systems Enthusiast</h3>
+            <p class="time">2024 – Now</p>
+            <p>Exploring intelligent systems and automation to create smarter, more connected solutions — where curiosity meets engineering purpose.</p>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Philosophy / Values -->
+    <section id="values" class="section values">
+    <h2><i class="fas fa-compass"></i> Philosophy & Values</h2>
+    <div class="values-grid">
+        <div class="value-card fade-in">
+        <i class="fas fa-balance-scale"></i>
+        <h3>Discipline over Hype</h3>
+        <p>I stay consistent. Tools and trends change — discipline keeps me grounded.</p>
+        </div>
+        <div class="value-card fade-in">
+        <i class="fas fa-forward"></i>
+        <h3>Progress over Perfection</h3>
+        <p>Every project is a step forward. I learn, iterate, and grow through building.</p>
+        </div>
+        <div class="value-card fade-in">
+        <i class="fas fa-lightbulb"></i>
+        <h3>Curiosity First</h3>
+        <p>I ask, I explore, I test. Curiosity leads to innovation and understanding.</p>
+        </div>
+    </div>
+    </section>
+
+    <!-- Vision / Future Tech -->
+    <section id="vision" class="section vision">
+        <h2><i class="fas fa-rocket"></i> My Vision</h2>
+        <p>Technologies & Concepts that drive my future work.</p>
+        <div class="marquee-container">
+            <div class="marquee-track marquee-left">
+                <div class="vision-item"><i class="fas fa-brain"></i> AI Integration</div>
+                <div class="vision-item"><i class="fab fa-react"></i> Advanced Frontend</div>
+                <div class="vision-item"><i class="fas fa-server"></i> Serverless/Cloud</div>
+                <div class="vision-item"><i class="fas fa-lock"></i> Cybersecurity</div>
+                <div class="vision-item"><i class="fas fa-chart-line"></i> Big Data</div>
+                <div class="vision-item"><i class="fas fa-microchip"></i> Edge Computing</div>
+                <div class="vision-item"><i class="fas fa-brain"></i> AI Integration</div>
+                <div class="vision-item"><i class="fab fa-react"></i> Advanced Frontend</div>
+                <div class="vision-item"><i class="fas fa-server"></i> Serverless/Cloud</div>
+                <div class="vision-item"><i class="fas fa-lock"></i> Cybersecurity</div>
+                <div class="vision-item"><i class="fas fa-chart-line"></i> Big Data</div>
+                <div class="vision-item"><i class="fas fa-microchip"></i> Edge Computing</div>
+            </div>
+            
+            <div class="marquee-track marquee-right">
+                <div class="vision-item"><i class="fas fa-vr-cardboard"></i> AR/VR</div>
+                <div class="vision-item"><i class="fas fa-cubes"></i> Blockchain Tech</div>
+                <div class="vision-item"><i class="fas fa-robot"></i> Robotics</div>
+                <div class="vision-item"><i class="fas fa-mobile-alt"></i> Native Apps</div>
+                <div class="vision-item"><i class="fas fa-feather-alt"></i> Clean Code</div>
+                <div class="vision-item"><i class="fas fa-heartbeat"></i> Performance</div>
+                <div class="vision-item"><i class="fas fa-vr-cardboard"></i> AR/VR</div>
+                <div class="vision-item"><i class="fas fa-cubes"></i> Blockchain Tech</div>
+                <div class="vision-item"><i class="fas fa-robot"></i> Robotics</div>
+                <div class="vision-item"><i class="fas fa-mobile-alt"></i> Native Apps</div>
+                <div class="vision-item"><i class="fas fa-feather-alt"></i> Clean Code</div>
+                <div class="vision-item"><i class="fas fa-heartbeat"></i> Performance</div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects" class="section projects">
+    <h2><i class="fas fa-folder-open"></i> Featured Projects</h2>
+    
+
+    <div class="project-grid">
+        <div class="project-card fade-in" data-category="iot">
+        <img src="img/greenhouse.jpg" alt="Smart Greenhouse" />
+        <h3>Smart Greenhouse</h3>
+        <p>IoT system tracking temperature & humidity in real-time with PyQt5 & sensors.</p>
+        <div class="stack">
+            <span><i class="fab fa-python"></i> Python</span>
+            <span><i class="fas fa-microchip"></i> IoT</span>
+        </div>
+        <div class="actions">
+            <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
+            <a href="#" class="btn-small"><i class="fab fa-github"></i> Code</a>
+        </div>
+        </div>
+
+        <div class="project-card fade-in" data-category="web">
+        <img src="img/manager.jpg" alt="BridgeSats" />
+        <h3>BridgeSats</h3>
+        <p>Django-based inventory & sales system with analytics and clean UI.</p>
+        <div class="stack">
+            <span><i class="fab fa-python"></i> Django</span>
+            <span><i class="fab fa-js"></i> JS</span>
+        </div>
+        <div class="actions">
+            <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
+            <a href="#" class="btn-small"><i class="fab fa-github"></i> Code</a>
+        </div>
+        </div>
+
+        <div class="project-card fade-in" data-category="ai">
+        <img src="img/extended-logo.png" alt="Nexio" />
+        <h3>Nexio</h3>
+        <p>Modern AI-powered app for smart team collaboration.</p>
+        <div class="stack">
+            <span><i class="fab fa-react"></i> React</span>
+            <span><i class="fas fa-brain"></i> AI</span>
+        </div>
+        <div class="actions">
+            <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
+            <a href="#" class="btn-small"><i class="fab fa-github"></i> Code</a>
+        </div>
+        </div>
+    </div>
+    </section>
+
+
+  <!-- Contact -->
+    <section id="contact" class="section contact">
+    <h2><i class="fas fa-paper-plane"></i> Get in Touch</h2>
+    <p>Interested in collaborating or have a question? Let's talk <i class="fas fa-arrow-down"></i></p>
+
+    <form id="contact-form">
+        <div class="form-group">
+        <input type="text" name="name" id="name" placeholder="Your Name" required />
+        <i class="fas fa-user"></i>
+        </div>
+        <div class="form-group">
+        <input type="email" name="email" id="email" placeholder="Your Email" required />
+        <i class="fas fa-envelope"></i>
+        </div>
+        <div class="form-group">
+        <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+        <i class="fas fa-comment-dots"></i>
+        </div>
+        <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+    </form>
+
+    <div id="form-status"></div>
+    </section>
+
+
+    <!-- Footer amélioré -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>Zedfolio<span>.</span></h3>
+        <p>Software Engineering Student | Building with discipline, curiosity, and purpose.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-socials">
+        <h4>Connect</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+           <a href="#"><i class="fab fa-facebook"></i></a>
+           <a href="#"><i class="fab fa-linkedin"></i></a>
+           <a href="#"><i class="fab fa-discord"></i></a>
+           <a href="#"><i class="fab fa-telegram"></i></a>
+           <a href="#"><i class="fab fa-medium"></i></a>
+           <a href="#"><i class="fab fa-pinterest"></i></a>
+           <a href="#"><i class="fab fa-youtube"></i></a>
+
+           
+        </div>
+      </div>
+    </div>
+    <p class="footer-copy">© <span id="year"></span> Zedfolio — Built with discipline & curiosity ⚙️</p>
+  </footer>
+
+  <!-- Modal project preview -->
+  <div id="project-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+      <a id="modal-link" href="#" target="_blank" class="btn-small"><i class="fas fa-external-link-alt"></i> Visit Project</a>
+    </div>
+  </div>
+
+
+    <script>
+    const texts = [
+    "Software Engineering Student",
+    "Web Developer",
+    "Curious Technologist"
+    ];
+
+    let currentTextIndex = 0;
+    let charIndex = 0;
+    const typedText = document.querySelector('.typed-text');
+    const typingSpeed = 100; // vitesse d’apparition
+    const erasingSpeed = 40; // vitesse de suppression
+    const delayBetween = 2000; // pause entre les textes
+
+    function type() {
+    if (charIndex < texts[currentTextIndex].length) {
+        const span = document.createElement('span');
+        span.textContent = texts[currentTextIndex].charAt(charIndex);
+        span.classList.add('fade-in');
+        typedText.appendChild(span);
+        charIndex++;
+        setTimeout(type, typingSpeed);
+    } else {
+        setTimeout(erase, delayBetween);
+    }
+    }
+
+    function erase() {
+    if (charIndex > 0) {
+        typedText.removeChild(typedText.lastChild);
+        charIndex--;
+        setTimeout(erase, erasingSpeed);
+    } else {
+        currentTextIndex++;
+        if (currentTextIndex >= texts.length) currentTextIndex = 0;
+        setTimeout(type, 800);
+    }
+    }
+
+    // Lancer l'animation après chargement
+    document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(type, 500);
+    });
+    </script>
+
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/main.js"></script>
+    <!-- Floating Contact Button -->
+  <a href="index.html#contact" class="floating-btn fade-in">
+    <i class="fas fa-headset"></i>
+  </a>
+</body>
+</html>

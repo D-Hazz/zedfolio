@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zedfolio | Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* Hero Section Styling */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      color: #ffffff;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      min-height: 1.5em;
+      letter-spacing: 0.5px;
+    }
+
+    /* Curseur clignotant */
+    .cursor {
+      display: inline-block;
+      background-color: #ffffff;
+      width: 2px;
+      margin-left: 2px;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
+
+    /* Animation de fade-in & slide */
+    .fade-in {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeSlideIn 0.3s forwards;
+    }
+
+    @keyframes fadeSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+        color: #fb00ff;
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        color: #ffffff;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .hero .btn {
+        font-size: 0.9rem;
+      }
+    }
+</style>
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar-container">
+    <header class="navbar">
+      <div class="navbar-content">
+        <a href="index.html#hero" class="logo">
+          <div>Zedfolio<span>.</span></div>
+        </a>
+        <nav id="nav-links">
+          <a href="index.html#about">About</a>
+          <a href="projets.html" class="active">Projects</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <i class="fas fa-moon theme-toggle" id="theme-toggle"></i>
+          <i class="fas fa-bars burger" id="burger"></i>
+        </div>
+      </div>
+    </header>
+  </div>
+
+      <!-- Projects -->
+    <section id="projects" class="section projects">
+    <h2><i class="fas fa-folder-open"></i> Featured Projects</h2>
+    
+
+    <div class="project-grid">
+        <div class="project-card fade-in" data-category="iot">
+        <img src="img/greenhouse.jpg" alt="Smart Greenhouse" />
+        <h3>Smart Greenhouse</h3>
+        <p>IoT system tracking temperature & humidity in real-time with PyQt5 & sensors.</p>
+        <div class="stack">
+            <span><i class="fab fa-python"></i> Python</span>
+            <span><i class="fas fa-microchip"></i> IoT</span>
+        </div>
+        <div class="actions">
+            <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
+            <a href="#" class="btn-small"><i class="fab fa-github"></i> Code</a>
+        </div>
+        </div>
+
+        <div class="project-card fade-in" data-category="web">
+        <img src="img/manager.jpg" alt="BridgeSats" />
+        <h3>BridgeSats</h3>
+        <p>Django-based inventory & sales system with analytics and clean UI.</p>
+        <div class="stack">
+            <span><i class="fab fa-python"></i> Django</span>
+            <span><i class="fab fa-js"></i> JS</span>
+        </div>
+        <div class="actions">
+            <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
+            <a href="#" class="btn-small"><i class="fab fa-github"></i> Code</a>
+        </div>
+        </div>
+
+        <div class="project-card fade-in" data-category="ai">
+        <img src="img/extended-logo.png" alt="Nexio" />
+        <h3>Nexio</h3>
+        <p>Modern AI-powered app for smart team collaboration.</p>
+        <div class="stack">
+            <span><i class="fab fa-react"></i> React</span>
+            <span><i class="fas fa-brain"></i> AI</span>
+        </div>
+        <div class="actions">
+            <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
+            <a href="#" class="btn-small"><i class="fab fa-github"></i> Code</a>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- Testimonials -->
+   <section id="testimonials" class="section testimonials">
+    <h2><i class="fas fa-star"></i> Client Testimonials</h2>
+    <p>What people I've worked with say about me.</p>
+    
+    <div class="marquee-container testimonial-marquee">
+        
+        <div class="marquee-track testimonial-track">
+            
+            <div class="testimonial-card fade-in">
+                <p>"Zed delivered a high-quality product ahead of schedule. His attention to detail and clean code is top-notch."</p>
+                <div class="client-info">
+                    <span class="client-name">— Alex R.</span>
+                    <span class="client-title">CEO, TechStart</span>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <p>"Excellent communication and problem-solving skills. He turned a complex idea into a simple, working solution."</p>
+                <div class="client-info">
+                    <span class="client-name">— Maria D.</span>
+                    <span class="client-title">Project Manager</span>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <p>"Truly enjoyed working with Zed. He's a fast learner and brought creative solutions to the table."</p>
+                <div class="client-info">
+                    <span class="client-name">— Ben K.</span>
+                    <span class="client-title">CTO, DataCorp</span>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <p>"Professional and dedicated. The IoT dashboard he built for us is reliable and easy to use."</p>
+                <div class="client-info">
+                    <span class="client-name">— Sarah L.</span>
+                    <span class="client-title">Operations Lead</span>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <p>"His knowledge of modern web development frameworks is impressive. Highly recommend for any web project."</p>
+                <div class="client-info">
+                    <span class="client-name">— David P.</span>
+                    <span class="client-title">Lead Architect</span>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <p>"Zed's work ethic is fantastic. He consistently meets deadlines and exceeds expectations."</p>
+                <div class="client-info">
+                    <span class="client-name">— Chloe T.</span>
+                    <span class="client-title">Product Owner</span>
+                </div>
+            </div>
+            
+            <div class="testimonial-card fade-in">
+                <p>"Zed delivered a high-quality product ahead of schedule. His attention to detail and clean code is top-notch."</p>
+                <div class="client-info">
+                    <span class="client-name">— Alex R.</span>
+                    <span class="client-title">CEO, TechStart</span>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <p>"Excellent communication and problem-solving skills. He turned a complex idea into a simple, working solution."</p>
+                <div class="client-info">
+                    <span class="client-name">— Maria D.</span>
+                    <span class="client-title">Project Manager</span>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <p>"Truly enjoyed working with Zed. He's a fast learner and brought creative solutions to the table."</p>
+                <div class="client-info">
+                    <span class="client-name">— Ben K.</span>
+                    <span class="client-title">CTO, DataCorp</span>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <p>"Professional and dedicated. The IoT dashboard he built for us is reliable and easy to use."</p>
+                <div class="client-info">
+                    <span class="client-name">— Sarah L.</span>
+                    <span class="client-title">Operations Lead</span>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <p>"His knowledge of modern web development frameworks is impressive. Highly recommend for any web project."</p>
+                <div class="client-info">
+                    <span class="client-name">— David P.</span>
+                    <span class="client-title">Lead Architect</span>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <p>"Zed's work ethic is fantastic. He consistently meets deadlines and exceeds expectations."</p>
+                <div class="client-info">
+                    <span class="client-name">— Chloe T.</span>
+                    <span class="client-title">Product Owner</span>
+                </div>
+            </div>
+        </div>
+    </div>
+   </section>
+   
+
+
+  <!-- Floating Contact Button -->
+  <a href="index.html#contact" class="floating-btn fade-in">
+    <i class="fas fa-headset"></i>
+  </a>
+
+    <!-- Modal project preview -->
+  <div id="project-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+      <a id="modal-link" href="#" target="_blank" class="btn-small"><i class="fas fa-external-link-alt"></i> Visit Project</a>
+    </div>
+  </div>
+  
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="js/main.js"></script>
+    <!-- Floating Contact Button -->
+  <a href="index.html#contact" class="floating-btn fade-in">
+    <i class="fas fa-headset"></i>
+  </a>
+</body>
+</html>
+
