@@ -85,26 +85,28 @@
 </head>
 <body>
   <!-- Navbar -->
-  <div class="navbar-container">
+    <div class="navbar-container">
     <header class="navbar">
-      <div class="navbar-content">
-        <a href="index.html#hero" class="logo">
-          <div>Zedfolio<span>.</span></div>
-        </a>
-        <nav id="nav-links">
-          <a href="index.html#about">About</a>
-          <a href="projets.html" class="active">Projects</a>
-          <a href="index.html#contact">Contact</a>
-        </nav>
-        <div class="nav-actions">
-          <i class="fas fa-moon theme-toggle" id="theme-toggle"></i>
-          <i class="fas fa-bars burger" id="burger"></i>
-        </div>
-      </div>
-    </header>
-  </div>
+        <div class="navbar-content"> 
+            <a href="#hero" class="logo">
+              <div>Zedfolio<span>.</span></div>
+            </a>
+            <nav id="nav-links">
+                <a href="#about">About</a>                
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
 
-      <!-- Projects -->
+        <div class="nav-actions">
+            <i class="fas fa-moon theme-toggle" id="theme-toggle"></i>
+            <i class="fas fa-bars burger" id="burger"></i>
+            
+        </div>
+    </header>
+    </div>
+
+
+    <!-- Projects -->
     <section id="projects" class="section projects">
     <h2><i class="fas fa-folder-open"></i> Featured Projects</h2>
     
@@ -251,15 +253,34 @@
         </div>
     </div>
    </section>
-   
 
+    <!-- Footer amélioré -->
+  <footer class="footer">
+    <div class="footer-container">
 
-  <!-- Floating Contact Button -->
-  <a href="index.html#contact" class="floating-btn fade-in">
-    <i class="fas fa-headset"></i>
-  </a>
+      <div style="justify-content: center; text-align: center;" class="footer-socials">
+        <h4>Connect</h4>
+        <div class="social-icons">
+          <a href="https://wa.me/243971734080"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://github.com/D-Hazz"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/zed-ev-59ba68390?trk=contact-info"><i class="fab fa-linkedin"></i></a>
+          <a href="https://x.com/ZedHazz14919?t=i3IozdK9z64u0hyMxMN5jg&s=09"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/dado.hazz?igsh=d2gwcGN2ZGZ4ZGlt"><i class="fab fa-instagram"></i></a>
+           <a href="https://www.facebook.com/hakizuhorahozidazem.hakizuhoraho/"><i class="fab fa-facebook"></i></a>
+           <a href="https://discord.com/channels/heavenly_tiger_17975"><i class="fab fa-discord"></i></a>
+           <a href="https://t.me/ZedHakiza"><i class="fab fa-telegram"></i></a>
+           <a href="#"><i class="fab fa-medium"></i></a>
+           <a href="https://pin.it/59oWuPI2w"><i class="fab fa-pinterest"></i></a>
+           <a href="https://youtube.com/@zedhazz-b7k?si=OXVsf_2YTPYKF7Du"><i class="fab fa-youtube"></i></a>
 
-    <!-- Modal project preview -->
+           
+        </div>
+      </div>
+    </div>
+    <p class="footer-copy">© <span id="year"></span> Zedfolio — Built with discipline & curiosity ⚙️</p>
+  </footer>
+
+  <!-- Modal project preview -->
   <div id="project-modal" class="modal">
     <div class="modal-content">
       <span class="close-btn">&times;</span>
@@ -268,7 +289,54 @@
       <a id="modal-link" href="#" target="_blank" class="btn-small"><i class="fas fa-external-link-alt"></i> Visit Project</a>
     </div>
   </div>
-  
+
+
+    <script>
+    const texts = [
+    "Software Engineering Student",
+    "Web Developer",
+    "Curious Technologist"
+    ];
+
+    let currentTextIndex = 0;
+    let charIndex = 0;
+    const typedText = document.querySelector('.typed-text');
+    const typingSpeed = 100; // vitesse d’apparition
+    const erasingSpeed = 40; // vitesse de suppression
+    const delayBetween = 2000; // pause entre les textes
+
+    function type() {
+    if (charIndex < texts[currentTextIndex].length) {
+        const span = document.createElement('span');
+        span.textContent = texts[currentTextIndex].charAt(charIndex);
+        span.classList.add('fade-in');
+        typedText.appendChild(span);
+        charIndex++;
+        setTimeout(type, typingSpeed);
+    } else {
+        setTimeout(erase, delayBetween);
+    }
+    }
+
+    function erase() {
+    if (charIndex > 0) {
+        typedText.removeChild(typedText.lastChild);
+        charIndex--;
+        setTimeout(erase, erasingSpeed);
+    } else {
+        currentTextIndex++;
+        if (currentTextIndex >= texts.length) currentTextIndex = 0;
+        setTimeout(type, 800);
+    }
+    }
+
+    // Lancer l'animation après chargement
+    document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(type, 500);
+    });
+    </script>
+
+
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="js/main.js"></script>
@@ -278,4 +346,3 @@
   </a>
 </body>
 </html>
-
