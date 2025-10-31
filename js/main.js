@@ -93,14 +93,14 @@ filterButtons.querySelectorAll("button").forEach(btn => {
 });
 
 // EmailJS contact form
-(function(){ emailjs.init("YOUR_PUBLIC_KEY"); })();
+(function(){ emailjs.init("service_5rgg6cw"); })();
 
 const form = document.getElementById("contact-form");
 const status = document.getElementById("form-status");
 form.addEventListener("submit", function(e){
   e.preventDefault();
   status.textContent="Sending...";
-  emailjs.sendForm("YOUR_SERVICE_ID","YOUR_TEMPLATE_ID",this)
+  emailjs.sendForm("service_5rgg6cw","template_5s4kzg3",this)
     .then(()=>{ status.textContent="Message sent successfully ✅"; form.reset(); })
     .catch(err=>{ console.error(err); status.textContent="Oops! Something went wrong ❌"; });
 });
