@@ -260,32 +260,37 @@
         </div>
     </section>
 
-  <!-- Contact -->
+    <!-- Contact -->
     <section id="contact" class="section contact">
-    <h2><i class="fas fa-paper-plane"></i> Get in Touch</h2>
-    <p>Interested in collaborating or have a question? Let's talk <i class="fas fa-arrow-down"></i></p>
+      <h2><i class="fas fa-paper-plane"></i> Get in Touch</h2>
+      <p>Interested in collaborating or have a question? Let's talk <i class="fas fa-arrow-down"></i></p>
 
-    <form id="contact-form">
+      <form id="contact-form">
         <div class="form-group">
-        <input type="text" name="name" id="name" placeholder="Your Name" required />
-        <i class="fas fa-user"></i>
+          <input type="text" name="name" id="name" placeholder="Your Name" required />
+          <i class="fas fa-user"></i>
         </div>
         <div class="form-group">
-        <input type="email" name="email" id="email" placeholder="Your Email" required />
-        <i class="fas fa-envelope"></i>
+          <input type="email" name="email" id="email" placeholder="Your Email" required />
+          <i class="fas fa-envelope"></i>
         </div>
         <div class="form-group">
-        <textarea name="message" id="message" placeholder="Your Message" required></textarea>
-        <i class="fas fa-comment-dots"></i>
+          <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+          <i class="fas fa-comment-dots"></i>
         </div>
-        <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Send Message</button>
-    </form>
 
-    <div id="form-status"></div>
+        <!-- Bouton avec animation -->
+        <button type="submit" class="btn" id="send-btn">
+          <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
+          <span class="btn-loader"></span>
+          <span class="btn-check"><i class="fas fa-check"></i></span>
+        </button>
+      </form>
+
+      <div id="form-status" class="fade-in"></div>
     </section>
 
-
-    <!-- Footer amélioré -->
+<!-- Footer amélioré -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-about">
@@ -372,7 +377,62 @@
 
 
   <script src="https://unpkg.com/scrollreveal"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+(function() {
+  emailjs.init("602CPH3gd6y_FsGnv"); // ✅ ta clé publique EmailJS
+})();
+
+const form = document.getElementById("contact-form");
+const status = document.getElementById("form-status");
+const sendBtn = document.getElementById("send-btn");
+const btnText = sendBtn.querySelector(".btn-text");
+const btnLoader = sendBtn.querySelector(".btn-loader");
+const btnCheck = sendBtn.querySelector(".btn-check");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  // 🔵 État d’envoi
+  status.textContent = "Sending...";
+  status.className = "sending visible";
+  sendBtn.disabled = true;
+
+  btnText.style.opacity = "0";
+  btnLoader.style.opacity = "1";
+  btnCheck.style.opacity = "0";
+
+  emailjs.sendForm("service_5rgg6cw", "template_5s4kzg3", this)
+    .then(() => {
+      // ✅ Succès
+      status.textContent = "Message sent successfully!";
+      status.className = "success visible";
+      btnLoader.style.opacity = "0";
+      btnCheck.style.opacity = "1";
+      form.reset();
+    })
+    .catch(err => {
+      console.error(err);
+      status.textContent = "Oops! Something went wrong. Try again.";
+      status.className = "error visible";
+      btnLoader.style.opacity = "0";
+      btnText.style.opacity = "1";
+    })
+    .finally(() => {
+      // 🔁 Reset après délai
+      setTimeout(() => {
+        btnCheck.style.opacity = "0";
+        btnText.style.opacity = "1";
+        sendBtn.disabled = false;
+        status.className = "";
+        status.textContent = "";
+      }, 4000);
+    });
+});
+</script>
+
+
   <script src="js/main.js"></script>
     <!-- Floating Contact Button -->
   <a href="index.html#contact" class="floating-btn fade-in">

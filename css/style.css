@@ -484,64 +484,126 @@ nav a.active::after {
 
 /* Contact */
 form {
-    max-width: 650px;
-    margin: 3rem auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
+  max-width: 650px;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 .form-group {
-    position: relative;
+  position: relative;
 }
 .form-group i {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--accent);
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent);
 }
 input,
 textarea {
-    width: 100%;
-    padding: 1rem 1.5rem;
-    border: none;
-    border-radius: 30px;
-    background: var(--card);
-    color: var(--text);
-    font-size: 1rem;
-    outline: none;
-    transition: 0.3s ease;
-    border: 1px solid var(--border);
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: var(--card);
+  color: var(--text);
+  font-size: 1rem;
+  outline: none;
+  transition: 0.3s ease;
 }
 input:focus,
 textarea:focus {
-    box-shadow: 0 0 0 3px var(--accent); /* Focus en Mauve */
-    background: #251e2b; /* Un peu plus foncé au focus */
+  box-shadow: 0 0 0 3px var(--accent);
+  background: #251e2b;
 }
 textarea {
-    resize: none;
-    height: 150px;
-    border-radius: 15px;
-}
-#form-status {
-    margin-top: 1rem;
-    font-size: 1rem;
-    text-align: center;
-    font-weight: 600;
-    color: var(--accent);
-    transition: 0.3s ease;
+  resize: none;
+  height: 150px;
+  border-radius: 15px;
 }
 
-/* Fade-in */
+/* Bouton animé */
+.btn {
+  position: relative;
+  background: var(--accent);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn:hover {
+  background: #5c33d1;
+  transform: translateY(-2px);
+}
+.btn-text,
+.btn-loader,
+.btn-check {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-text {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.btn-loader {
+  width: 24px;
+  height: 24px;
+  border: 3px solid white;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  opacity: 0;
+  animation: spin 1s linear infinite;
+  transition: opacity 0.3s;
+}
+.btn-check {
+  color: #4ade80;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Feedback du statut */
+#form-status {
+  margin-top: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+#form-status.success {
+  color: #4ade80;
+}
+#form-status.error {
+  color: #f87171;
+}
+#form-status.sending {
+  color: #38bdf8;
+}
+
+/* Animations */
 .fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s ease-out, transform 1s ease-out;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
 }
 .fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
+@keyframes spin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
 
 /* Footer */
 .footer {
