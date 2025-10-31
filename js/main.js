@@ -93,7 +93,7 @@ filterButtons.querySelectorAll("button").forEach(btn => {
 });
 
 // EmailJS contact form
-(function(){ emailjs.init("service_5rgg6cw"); })();
+(function(){ emailjs.init("602CPH3gd6y_FsGnv"); })();
 
 const form = document.getElementById("contact-form");
 const status = document.getElementById("form-status");
