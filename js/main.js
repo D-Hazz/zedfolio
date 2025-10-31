@@ -92,19 +92,6 @@ filterButtons.querySelectorAll("button").forEach(btn => {
   });
 });
 
-// EmailJS contact form
-(function(){ emailjs.init("602CPH3gd6y_FsGnv"); })();
-
-const form = document.getElementById("contact-form");
-const status = document.getElementById("form-status");
-form.addEventListener("submit", function(e){
-  e.preventDefault();
-  status.textContent="Sending...";
-  emailjs.sendForm("service_5rgg6cw","template_5s4kzg3",this)
-    .then(()=>{ status.textContent="Message sent successfully ✅"; form.reset(); })
-    .catch(err=>{ console.error(err); status.textContent="Oops! Something went wrong ❌"; });
-});
-
 
 
 // Configuration des animations ScrollReveal
