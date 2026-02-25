@@ -29,18 +29,18 @@
 /* 💻 Modern Geek Background: Focalisé sur le Violet/Noir */
 body {
     /* Combiner l'overlay sombre, le dégradé radial, et l'image de fond */
-    background-image: 
+    /*background-image: 
         /* 1. L'OVERLAY SOMBRE : Un calque noir semi-transparent */
-        linear-gradient(rgba(0, 0, 0, 0.623), rgba(0, 0, 0, 0.683)),
+       /* linear-gradient(rgba(0, 0, 0, 0.623), rgba(0, 0, 0, 0.683)),
         /* 2. LE DÉGRADÉ RADIAL SUBTIL : L'effet de profondeur (déjà présent) */
-        radial-gradient(
+       /* radial-gradient(
             ellipse at top,
             rgba(70, 20, 90, 0.564), /* Un peu de violet */
-            transparent
+           /* transparent
         ),
         /* 3. L'IMAGE DE FOND : La source originale */
-        url('../img/sky1.jpg');
-
+        /*url('../img/sky1.jpg');*/
+    background: black;
     /* PROPRIÉTÉS DE FOND: Appliquées à l'ensemble des couches */
     background-repeat: no-repeat, no-repeat, no-repeat; /* Répété pour chaque couche */
     background-attachment: fixed;
