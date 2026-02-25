@@ -42,10 +42,10 @@ body {
         /*url('../img/sky1.jpg');*/
     background: black;
     /* PROPRIÉTÉS DE FOND: Appliquées à l'ensemble des couches */
-    background-repeat: no-repeat, no-repeat, no-repeat; /* Répété pour chaque couche */
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover; /* Assure que l'image et l'overlay couvrent tout */
+    /*background-repeat: no-repeat, no-repeat, no-repeat; /* Répété pour chaque couche */
+    /*background-attachment: fixed;
+    background-position: center;*/
+    /*background-size: cover; /* Assure que l'image et l'overlay couvrent tout */
     
     /* PROPRIÉTÉS POUR L'ANIMATION ET L'EFFET DE PROFONDEUR DU DÉGRADÉ (elles étaient mal placées) */
     /* Ces propriétés n'ont de sens que si l'on voulait animer le fond lui-même, pas la superposition.
