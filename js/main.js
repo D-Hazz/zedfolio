@@ -53,9 +53,9 @@ if (menuToggle && mainNav) {
 }
 
 const phrases = [
-  'Web developer with product thinking.',
-  'AI and systems builder.',
-  'Designing clean interfaces and solid logic.'
+  'Embedded systems engineer and product builder.',
+  'Building IoT, web, and Bitcoin-Lightning products.',
+  'Turning hardware and software into real-world value.'
 ];
 
 let phraseIndex = 0;
@@ -86,14 +86,14 @@ function typeLoop() {
     }
   }
 
-  setTimeout(typeLoop, deleting ? 36 : 88);
+  setTimeout(typeLoop, deleting ? 36 : 86);
 }
 
 if (typedText) {
   typeLoop();
 }
 
-const reveals = document.querySelectorAll('.reveal');
+const reels = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -103,7 +103,24 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
   });
 }, { threshold: 0.12 });
 
-reveals.forEach((element) => revealObserver.observe(element));
+reels.forEach((element) => revealObserver.observe(element));
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.filter;
+
+    filterButtons.forEach((btn) => btn.classList.toggle('active', btn === button));
+
+    projectCards.forEach((card) => {
+      const categories = card.dataset.category || '';
+      const match = filter === 'all' || categories.includes(filter);
+      card.style.display = match ? 'block' : 'none';
+    });
+  });
+});
 
 if (form) {
   form.addEventListener('submit', (event) => {

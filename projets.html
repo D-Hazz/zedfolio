@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Selected projects by Zed — from AI ideas to web products and smart systems."
+      content="Selected projects by Zed — IoT, Web3, lighting, mobile, and product engineering work."
     />
     <title>Zedfolio | Projects</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,7 +18,7 @@
     <div class="page-shell">
       <header class="topbar">
         <div class="container nav-wrap">
-          <a href="index.html#hero" class="brand" aria-label="Zedfolio home">Zedfolio<span>.</span></a>
+          <a href="index.html" class="brand" aria-label="Zedfolio home">Zedfolio<span>.</span></a>
 
           <nav id="main-nav" class="main-nav" aria-label="Main navigation">
             <a href="index.html#about">About</a>
@@ -43,86 +43,93 @@
         <section class="section">
           <div class="container">
             <p class="section-kicker center">Featured work</p>
-            <h2 class="section-title center">Selected projects and experiments.</h2>
+            <h2 class="section-title center">Selected products at the intersection of hardware, web, and finance.</h2>
+
+            <div class="project-filters reveal">
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="iot">IoT & Hardware</button>
+              <button class="filter-btn" data-filter="web3">Web3 & Lightning</button>
+              <button class="filter-btn" data-filter="fullstack">Full-Stack Web/Mobile</button>
+            </div>
 
             <div class="projects-grid">
-              <article class="project-card reveal">
-                <img src="img/greenhouse.jpg" alt="Smart Greenhouse project" />
+              <a class="project-card reveal" href="project-kilosats.html" data-category="iot web3">
+                <img src="img/greenhouse.jpg" alt="Kilosats project" />
                 <div class="project-body">
-                  <span class="tag">IoT</span>
-                  <h3>Smart Greenhouse</h3>
-                  <p>Real-time agricultural monitoring for temperature, humidity, and environmental insight.</p>
+                  <span class="tag">IoT / Web3 / Hardware</span>
+                  <h3>Kilosats</h3>
+                  <p>Smart energy meter and refill system powered by IoT telemetry and Bitcoin Lightning payments.</p>
                   <div class="project-meta">
-                    <span><i class="fa-brands fa-python"></i> Python</span>
-                    <span><i class="fa-solid fa-microchip"></i> Sensors</span>
+                    <span><i class="fa-solid fa-microchip"></i> ESP32</span>
+                    <span><i class="fa-solid fa-bolt"></i> Lightning</span>
                   </div>
                 </div>
-              </article>
+              </a>
 
-              <article class="project-card reveal">
-                <img src="img/manager.jpg" alt="BridgeSats project" />
+              <a class="project-card reveal" href="project-bs-wallet.html" data-category="web3 fullstack">
+                <img src="img/manager.jpg" alt="BS Wallet project" />
                 <div class="project-body">
-                  <span class="tag">Web</span>
-                  <h3>BridgeSats</h3>
-                  <p>Operational and sales dashboard designed to simplify inventory visibility and decision-making.</p>
+                  <span class="tag">Web3 / Mobile</span>
+                  <h3>BS Wallet</h3>
+                  <p>Multi-chain wallet experience for Bitcoin, Lightning, Ethereum, Tron, and USDT ecosystems.</p>
+                  <div class="project-meta">
+                    <span><i class="fa-brands fa-react"></i> React Native</span>
+                    <span><i class="fa-solid fa-wallet"></i> Wallet</span>
+                  </div>
+                </div>
+              </a>
+
+              <a class="project-card reveal" href="project-cofilab.html" data-category="web3 fullstack">
+                <img src="img/backg.jpg" alt="CoFiLab project" />
+                <div class="project-body">
+                  <span class="tag">Web / Web3</span>
+                  <h3>CoFiLab</h3>
+                  <p>Micro-freelancing and crowdfunding platform using LNURL-auth and Lightning payment flows.</p>
+                  <div class="project-meta">
+                    <span><i class="fa-brands fa-react"></i> Next.js</span>
+                    <span><i class="fa-solid fa-lightbulb"></i> LNURL</span>
+                  </div>
+                </div>
+              </a>
+
+              <a class="project-card reveal" href="project-serreconnect.html" data-category="iot">
+                <img src="img/sky.jpg" alt="SerreConnect project" />
+                <div class="project-body">
+                  <span class="tag">IoT / Embedded</span>
+                  <h3>SerreConnect</h3>
+                  <p>Smart greenhouse automation with instrumentation, remote dashboards, and environmental insights.</p>
+                  <div class="project-meta">
+                    <span><i class="fa-solid fa-seedling"></i> IoT</span>
+                    <span><i class="fa-solid fa-chart-line"></i> Sensors</span>
+                  </div>
+                </div>
+              </a>
+
+              <a class="project-card reveal" href="project-pharma.html" data-category="fullstack">
+                <img src="img/sky1.jpg" alt="Pharma management project" />
+                <div class="project-body">
+                  <span class="tag">Web / Enterprise</span>
+                  <h3>Pharma Management System</h3>
+                  <p>Full-stack inventory and supply chain solution built for traceability and operational flow.</p>
                   <div class="project-meta">
                     <span><i class="fa-brands fa-python"></i> Django</span>
-                    <span><i class="fa-brands fa-js"></i> JavaScript</span>
+                    <span><i class="fa-solid fa-boxes-stacked"></i> ERP</span>
                   </div>
                 </div>
-              </article>
+              </a>
 
-              <article class="project-card reveal">
-                <img src="img/extended-logo.png" alt="Nexio project" />
+              <a class="project-card reveal" href="contact.html" data-category="fullstack">
+                <img src="img/holder.png" alt="Custom product project" />
                 <div class="project-body">
-                  <span class="tag">AI</span>
-                  <h3>Nexio</h3>
-                  <p>Collaboration and productivity platform concept blending clean interfaces with AI support.</p>
+                  <span class="tag">Product</span>
+                  <h3>Custom platform work</h3>
+                  <p>Tailored interfaces and working systems for businesses, communities, and digital product teams.</p>
                   <div class="project-meta">
-                    <span><i class="fa-brands fa-react"></i> React</span>
-                    <span><i class="fa-solid fa-brain"></i> AI</span>
+                    <span><i class="fa-solid fa-rocket"></i> Product</span>
+                    <span><i class="fa-solid fa-pen-ruler"></i> UX</span>
                   </div>
                 </div>
-              </article>
-
-              <article class="project-card reveal">
-                <img src="img/backg.jpg" alt="Portfolio design project" />
-                <div class="project-body">
-                  <span class="tag">Design</span>
-                  <h3>Portfolio System</h3>
-                  <p>Premium personal brand experience focused on clarity, motion, and product storytelling.</p>
-                  <div class="project-meta">
-                    <span><i class="fa-brands fa-html5"></i> HTML</span>
-                    <span><i class="fa-brands fa-css3-alt"></i> CSS</span>
-                  </div>
-                </div>
-              </article>
-
-              <article class="project-card reveal">
-                <img src="img/sky.jpg" alt="Automation project" />
-                <div class="project-body">
-                  <span class="tag">Automation</span>
-                  <h3>Workflow Tools</h3>
-                  <p>Automation-focused prototypes for repetitive processes and more efficient user experiences.</p>
-                  <div class="project-meta">
-                    <span><i class="fa-brands fa-python"></i> Python</span>
-                    <span><i class="fa-solid fa-gear"></i> Scripts</span>
-                  </div>
-                </div>
-              </article>
-
-              <article class="project-card reveal">
-                <img src="img/sky1.jpg" alt="System integration project" />
-                <div class="project-body">
-                  <span class="tag">Systems</span>
-                  <h3>Connected Interfaces</h3>
-                  <p>Explorations around connected tools, embedded logic, and user-friendly data dashboards.</p>
-                  <div class="project-meta">
-                    <span><i class="fa-solid fa-microchip"></i> IoT</span>
-                    <span><i class="fa-solid fa-chart-line"></i> Data</span>
-                  </div>
-                </div>
-              </article>
+              </a>
             </div>
           </div>
         </section>
@@ -131,8 +138,8 @@
       <footer class="site-footer">
         <div class="container footer-inner">
           <div>
-            <a href="index.html#hero" class="brand footer-brand">Zedfolio<span>.</span></a>
-            <p>Product-minded developer building systems, interfaces, and experiences with purpose.</p>
+            <a href="index.html" class="brand footer-brand">Zedfolio<span>.</span></a>
+            <p>Product-minded builder for smart interfaces, secure systems, and connected experiences.</p>
           </div>
 
           <div class="footer-links">
