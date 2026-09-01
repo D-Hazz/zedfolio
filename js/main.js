@@ -30,25 +30,47 @@ if (themeToggle) {
   });
 }
 
+const floatingButton = document.querySelector('.floating-book-btn');
+if (!floatingButton) {
+  const calendlyButton = document.createElement('a');
+  calendlyButton.href = 'https://calendly.com/hakizimanazidane/new-meeting';
+  calendlyButton.target = '_blank';
+  calendlyButton.rel = 'noopener noreferrer';
+  calendlyButton.className = 'floating-book-btn';
+  calendlyButton.setAttribute('aria-label', 'Fixer un rendez-vous');
+  calendlyButton.title = 'Fixer un rendez-vous';
+  calendlyButton.innerHTML = '<i class="fa-solid fa-calendar-check"></i>';
+  document.body.appendChild(calendlyButton);
+}
+
 if (menuToggle && mainNav) {
-  menuToggle.addEventListener('click', () => {
-    mainNav.classList.toggle('open');
+  const updateMenuState = () => {
+    const expanded = mainNav.classList.contains('open');
+    menuToggle.setAttribute('aria-expanded', String(expanded));
     const icon = menuToggle.querySelector('i');
     if (icon) {
-      icon.classList.toggle('fa-bars');
-      icon.classList.toggle('fa-xmark');
+      icon.classList.toggle('fa-bars', !expanded);
+      icon.classList.toggle('fa-xmark', expanded);
     }
+  };
+
+  menuToggle.addEventListener('click', () => {
+    mainNav.classList.toggle('open');
+    updateMenuState();
   });
 
   mainNav.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
       mainNav.classList.remove('open');
-      const icon = menuToggle.querySelector('i');
-      if (icon) {
-        icon.classList.remove('fa-xmark');
-        icon.classList.add('fa-bars');
-      }
+      updateMenuState();
     });
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+      mainNav.classList.remove('open');
+      updateMenuState();
+    }
   });
 }
 
@@ -123,13 +145,80 @@ filterButtons.forEach((button) => {
 });
 
 if (form) {
-  form.addEventListener('submit', (event) => {
+  const formSubmitUrl = 'https://formsubmit.co/ajax/hakizimanazidane@gmail.com';
+
+  form.setAttribute('action', formSubmitUrl);
+  form.setAttribute('method', 'POST');
+  form.setAttribute('accept-charset', 'UTF-8');
+
+  const hiddenCaptcha = document.createElement('input');
+  hiddenCaptcha.type = 'hidden';
+  hiddenCaptcha.name = '_captcha';
+  hiddenCaptcha.value = 'false';
+  form.appendChild(hiddenCaptcha);
+
+  const hiddenSubject = document.createElement('input');
+  hiddenSubject.type = 'hidden';
+  hiddenSubject.name = '_subject';
+  hiddenSubject.value = 'Nouveau message depuis Zedfolio';
+  form.appendChild(hiddenSubject);
+
+  const hiddenTemplate = document.createElement('input');
+  hiddenTemplate.type = 'hidden';
+  hiddenTemplate.name = '_template';
+  hiddenTemplate.value = 'table';
+  form.appendChild(hiddenTemplate);
+
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    if (formStatus) {
-      formStatus.textContent = 'Thank you — your message is ready to be sent.';
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
     }
 
-    form.reset();
+    const submitButton = form.querySelector('button[type="submit"]');
+    const originalText = submitButton ? submitButton.textContent : 'Send message';
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
+    }
+
+    if (formStatus) {
+      formStatus.textContent = 'Sending your message...';
+    }
+
+    try {
+      const response = await fetch(formSubmitUrl, {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: new FormData(form)
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok || data.success === false) {
+        throw new Error(data.message || 'Message delivery failed.');
+      }
+
+      if (formStatus) {
+        formStatus.textContent = 'Thank you — your message has been sent successfully.';
+      }
+      form.reset();
+    } catch (error) {
+      console.error('Contact form error:', error);
+
+      if (formStatus) {
+        formStatus.textContent = 'The message could not be sent. Please email hakizimanazidane@gmail.com directly.';
+      }
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalText;
+      }
+    }
   });
 }
