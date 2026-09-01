@@ -1,173 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zedfolio | Projects</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-</head>
-<body>
-  <!-- Navbar -->
-  <div class="navbar-container">
-    <header class="navbar">
-      <div class="navbar-content">
-        <a href="index.html#hero" class="logo">
-          <div>Zedfolio<span>.</span></div>
-        </a>
-        <nav id="nav-links">
-          <a href="index.html#about" class="active">About</a>
-          <a href="projets.html">Projects</a>
-          <a href="index.html#contact">Contact</a>
-        </nav>
-        <div class="nav-actions">
-          <i class="fas fa-moon theme-toggle" id="theme-toggle"></i>
-          <i class="fas fa-bars burger" id="burger"></i>
-        </div>
-      </div>
-    </header>
-  </div> 
-    <!-- Skills -->
-  <section id="skills" class="section skills">
-    <h2><i class="fas fa-code"></i> Skills</h2>
-    <div class="skills-grid">
-      <div class="skill">
-        <div class="skill-header">
-          <i class="fab fa-html5"></i><span>HTML</span>
-        </div>
-        <div class="skill-bar"><div class="progress" data-progress="95"></div></div>
-      </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="About Zed — software engineering student building AI, web, and smart systems experiences."
+    />
+    <title>Zedfolio | About</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="container nav-wrap">
+          <a href="index.html#hero" class="brand" aria-label="Zedfolio home">Zedfolio<span>.</span></a>
 
-      <div class="skill">
-        <div class="skill-header">
-          <i class="fab fa-css3-alt"></i><span>CSS</span>
-        </div>
-        <div class="skill-bar"><div class="progress" data-progress="90"></div></div>
-      </div>
+          <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+            <a href="index.html#about">About</a>
+            <a href="index.html#skills">Skills</a>
+            <a href="projets.html">Projects</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="contact.html">Contact</a>
+          </nav>
 
-      <div class="skill">
-        <div class="skill-header">
-          <i class="fab fa-js"></i><span>JavaScript</span>
+          <div class="nav-actions">
+            <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+            <button class="menu-btn" id="menu-toggle" aria-label="Open menu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
         </div>
-        <div class="skill-bar"><div class="progress" data-progress="85"></div></div>
-      </div>
+      </header>
 
-      <div class="skill">
-        <div class="skill-header">
-          <i class="fab fa-python"></i><span>Python</span>
-        </div>
-        <div class="skill-bar"><div class="progress" data-progress="80"></div></div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-header">
-          <i class="fab fa-react"></i><span>React</span>
-        </div>
-        <div class="skill-bar"><div class="progress" data-progress="70"></div></div>
-      </div>
-    </div>
-  </section>
-  <!-- Experience & Education -->
-    <section id="experience" class="section experience">
-    <h2><i class="fas fa-briefcase"></i> Experience & Education</h2>
-    <div class="timeline">
-        <div class="timeline-item fade-in">
-        <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
-        <div class="timeline-content">
-            <h3>Bachelor in Software Engineering</h3>
-            <p class="time">2022 – Present</p>
-            <p>Building strong foundations in algorithms, AI, and smart systems.  
-            Constantly learning to create scalable, meaningful solutions.</p>
-        </div>
-        </div>
-
-        <div class="timeline-item fade-in">
-        <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
-        <div class="timeline-content">
-            <h3>Freelance Web Developer</h3>
-            <p class="time">2023 – Present</p>
-            <p>Worked on real projects involving Django, React, and IoT dashboards.  
-            Focused on clarity, performance, and clean architecture.</p>
-        </div>
-        </div>
-
-        <div class="timeline-item fade-in">
-        <div class="timeline-icon"><i class="fas fa-robot"></i></div>
-        <div class="timeline-content">
-            <h3>AI & Smart Systems Enthusiast</h3>
-            <p class="time">2024 – Now</p>
-            <p>Exploring intelligent systems and automation to create smarter, more connected solutions — where curiosity meets engineering purpose.</p>
-        </div>
-        </div>
-    </div>
-    </section>
-
-    <!-- Philosophy / Values -->
-    <section id="values" class="section values">
-    <h2><i class="fas fa-compass"></i> Philosophy & Values</h2>
-    <div class="values-grid">
-        <div class="value-card fade-in">
-        <i class="fas fa-balance-scale"></i>
-        <h3>Discipline over Hype</h3>
-        <p>I stay consistent. Tools and trends change — discipline keeps me grounded.</p>
-        </div>
-        <div class="value-card fade-in">
-        <i class="fas fa-forward"></i>
-        <h3>Progress over Perfection</h3>
-        <p>Every project is a step forward. I learn, iterate, and grow through building.</p>
-        </div>
-        <div class="value-card fade-in">
-        <i class="fas fa-lightbulb"></i>
-        <h3>Curiosity First</h3>
-        <p>I ask, I explore, I test. Curiosity leads to innovation and understanding.</p>
-        </div>
-    </div>
-    </section>
-
-    <!-- Vision / Future Tech -->
-    <section id="vision" class="section vision">
-        <h2><i class="fas fa-rocket"></i> My Vision</h2>
-        <p>Technologies & Concepts that drive my future work.</p>
-        <div class="marquee-container">
-            <div class="marquee-track marquee-left">
-                <div class="vision-item"><i class="fas fa-brain"></i> AI Integration</div>
-                <div class="vision-item"><i class="fab fa-react"></i> Advanced Frontend</div>
-                <div class="vision-item"><i class="fas fa-server"></i> Serverless/Cloud</div>
-                <div class="vision-item"><i class="fas fa-lock"></i> Cybersecurity</div>
-                <div class="vision-item"><i class="fas fa-chart-line"></i> Big Data</div>
-                <div class="vision-item"><i class="fas fa-microchip"></i> Edge Computing</div>
-                <div class="vision-item"><i class="fas fa-brain"></i> AI Integration</div>
-                <div class="vision-item"><i class="fab fa-react"></i> Advanced Frontend</div>
-                <div class="vision-item"><i class="fas fa-server"></i> Serverless/Cloud</div>
-                <div class="vision-item"><i class="fas fa-lock"></i> Cybersecurity</div>
-                <div class="vision-item"><i class="fas fa-chart-line"></i> Big Data</div>
-                <div class="vision-item"><i class="fas fa-microchip"></i> Edge Computing</div>
+      <main>
+        <section class="section">
+          <div class="container about-grid">
+            <div class="about-visual reveal">
+              <div class="image-frame">
+                <img src="img/sky.jpg" alt="Portrait of Zed" />
+              </div>
             </div>
-            
-            <div class="marquee-track marquee-right">
-                <div class="vision-item"><i class="fas fa-vr-cardboard"></i> AR/VR</div>
-                <div class="vision-item"><i class="fas fa-cubes"></i> Blockchain Tech</div>
-                <div class="vision-item"><i class="fas fa-robot"></i> Robotics</div>
-                <div class="vision-item"><i class="fas fa-mobile-alt"></i> Native Apps</div>
-                <div class="vision-item"><i class="fas fa-feather-alt"></i> Clean Code</div>
-                <div class="vision-item"><i class="fas fa-heartbeat"></i> Performance</div>
-                <div class="vision-item"><i class="fas fa-vr-cardboard"></i> AR/VR</div>
-                <div class="vision-item"><i class="fas fa-cubes"></i> Blockchain Tech</div>
-                <div class="vision-item"><i class="fas fa-robot"></i> Robotics</div>
-                <div class="vision-item"><i class="fas fa-mobile-alt"></i> Native Apps</div>
-                <div class="vision-item"><i class="fas fa-feather-alt"></i> Clean Code</div>
-                <div class="vision-item"><i class="fas fa-heartbeat"></i> Performance</div>
+
+            <div class="about-copy reveal">
+              <p class="section-kicker">About me</p>
+              <h2>Clear thinking, technical depth, and product intuition.</h2>
+              <p>
+                I’m a software engineering student fascinated by the intersection of AI,
+                web products, smart systems, and real human needs. I like building things
+                that are not just impressive in code, but useful in everyday life.
+              </p>
+              <p>
+                My work is guided by one principle: build with intention. I care deeply
+                about clean architecture, careful UX, and the ability to turn vague ideas
+                into experiences people can trust and enjoy.
+              </p>
+
+              <div class="about-points">
+                <div>
+                  <i class="fa-solid fa-bolt"></i>
+                  <span>Fast learner</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-code"></i>
+                  <span>Clean execution</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-lightbulb"></i>
+                  <span>Product thinking</span>
+                </div>
+              </div>
             </div>
+          </div>
+        </section>
+
+        <section class="section muted-section">
+          <div class="container">
+            <p class="section-kicker center">What I value</p>
+            <h2 class="section-title center">The principles behind my work.</h2>
+
+            <div class="values-grid">
+              <article class="value-card reveal">
+                <i class="fa-solid fa-balance-scale"></i>
+                <h3>Discipline over hype</h3>
+                <p>I focus on fundamentals, consistency, and sustainable quality instead of chasing trends.</p>
+              </article>
+
+              <article class="value-card reveal">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                <h3>Progress over perfection</h3>
+                <p>Every version improves the product, the understanding, and the decision-making behind it.</p>
+              </article>
+
+              <article class="value-card reveal">
+                <i class="fa-solid fa-lightbulb"></i>
+                <h3>Curiosity first</h3>
+                <p>I explore systems, ask better questions, and turn uncertainty into actionable insight.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" class="section">
+          <div class="container">
+            <p class="section-kicker center">Experience & learning</p>
+            <h2 class="section-title center">Engineering through practice, curiosity, and iteration.</h2>
+
+            <div class="timeline">
+              <article class="timeline-item reveal">
+                <div class="timeline-dot"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="timeline-content">
+                  <span class="time">2022 — Present</span>
+                  <h3>Software Engineering student</h3>
+                  <p>
+                    Developing a strong base in algorithms, architecture, AI thinking, and real-world software design.
+                  </p>
+                </div>
+              </article>
+
+              <article class="timeline-item reveal">
+                <div class="timeline-dot"><i class="fa-solid fa-code"></i></div>
+                <div class="timeline-content">
+                  <span class="time">2023 — Present</span>
+                  <h3>Freelance web developer</h3>
+                  <p>
+                    Building websites and interfaces with an emphasis on clarity, conversion, performance, and polished UX.
+                  </p>
+                </div>
+              </article>
+
+              <article class="timeline-item reveal">
+                <div class="timeline-dot"><i class="fa-solid fa-robot"></i></div>
+                <div class="timeline-content">
+                  <span class="time">2024 — Now</span>
+                  <h3>AI & smart systems enthusiast</h3>
+                  <p>
+                    Exploring how smart tools, automation, and connected systems can make user experiences more valuable.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section muted-section">
+          <div class="container">
+            <p class="section-kicker center">The future I’m building toward</p>
+            <h2 class="section-title center">AI, systems, modern interfaces, and better digital tools.</h2>
+
+            <div class="marquee-wrap">
+              <div class="marquee-track">
+                <span>AI integration</span>
+                <span>Web products</span>
+                <span>Cloud systems</span>
+                <span>Embedded systems</span>
+                <span>Data-driven design</span>
+                <span>Cybersecurity</span>
+                <span>AI integration</span>
+                <span>Web products</span>
+                <span>Cloud systems</span>
+                <span>Embedded systems</span>
+                <span>Data-driven design</span>
+                <span>Cybersecurity</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <div>
+            <a href="index.html#hero" class="brand footer-brand">Zedfolio<span>.</span></a>
+            <p>Software engineering student building for a cleaner, smarter digital future.</p>
+          </div>
+
+          <div class="footer-links">
+            <a href="index.html#about">About</a>
+            <a href="projets.html">Projects</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="contact.html">Contact</a>
+          </div>
+
+          <div class="socials">
+            <a href="https://github.com/D-Hazz" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/zed-ev-59ba68390" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://wa.me/243971734080" target="_blank" rel="noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
         </div>
-    </section>
+        <div class="container footer-bottom">
+          <span>© <span id="year"></span> Zedfolio</span>
+          <span>Built with discipline and curiosity.</span>
+        </div>
+      </footer>
+    </div>
 
-  <!-- Floating Contact Button -->
-  <a href="index.html#contact" class="floating-btn fade-in">
-    <i class="fas fa-headset"></i>
-  </a>
-
-  <script src="https://unpkg.com/scrollreveal"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="js/main.js"></script>
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>
