@@ -1,135 +1,118 @@
-const burger = document.getElementById("burger");
-const nav = document.getElementById("nav-links");
-const themeToggle = document.getElementById("theme-toggle");
+﻿const body = document.body;
+const themeToggle = document.getElementById('theme-toggle');
+const menuToggle = document.getElementById('menu-toggle');
+const mainNav = document.getElementById('main-nav');
+const typedText = document.getElementById('typed-text');
+const year = document.getElementById('year');
+const form = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
 
-// Navbar burger toggle
-burger.addEventListener("click", () => {
-  nav.classList.toggle("active");
-  burger.classList.toggle("fa-times");
-});
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
 
+const savedTheme = localStorage.getItem('zedfolio-theme');
+if (savedTheme === 'light') {
+  body.setAttribute('data-theme', 'light');
+  if (themeToggle) {
+    themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+  }
+}
 
-
-// Theme toggle
-themeToggle.addEventListener("click", () => {
-  const theme = document.body.getAttribute("data-theme") === "light" ? "dark" : "light";
-  document.body.setAttribute("data-theme", theme);
-  themeToggle.classList.toggle("fa-sun");
-  themeToggle.classList.toggle("fa-moon");
-});
-
-// ScrollReveal animations
-ScrollReveal().reveal(".hero h1, .hero p, .hero .btn", { delay:200, distance:"50px", origin:"bottom", duration:800, interval:100 });
-ScrollReveal().reveal(".section h2", { distance:"40px", origin:"bottom", duration:700 });
-ScrollReveal().reveal(".project-card", { interval:150, distance:"40px", origin:"bottom", duration:700 });
-
-// Animate skill bars
-const skillBars = document.querySelectorAll(".progress");
-const animateSkills = () => {
-  skillBars.forEach(bar => {
-    const rect = bar.getBoundingClientRect();
-    if(rect.top < window.innerHeight - 100) bar.style.width = bar.dataset.progress + "%";
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const nextTheme = body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    body.setAttribute('data-theme', nextTheme);
+    localStorage.setItem('zedfolio-theme', nextTheme);
+    themeToggle.innerHTML = nextTheme === 'light'
+      ? '<i class="fa-solid fa-sun"></i>'
+      : '<i class="fa-solid fa-moon"></i>';
   });
-};
-window.addEventListener("scroll", animateSkills);
-animateSkills();
+}
 
-// Fade-in elements
-const faders = document.querySelectorAll(".fade-in");
-const appearOnScroll = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting) {
-      entry.target.classList.add("visible");
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener('click', () => {
+    mainNav.classList.toggle('open');
+    const icon = menuToggle.querySelector('i');
+    if (icon) {
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-xmark');
+    }
+  });
+
+  mainNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+      const icon = menuToggle.querySelector('i');
+      if (icon) {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    });
+  });
+}
+
+const phrases = [
+  'Web developer with product thinking.',
+  'AI and systems builder.',
+  'Designing clean interfaces and solid logic.'
+];
+
+let phraseIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeLoop() {
+  if (!typedText) return;
+
+  const phrase = phrases[phraseIndex];
+
+  if (!deleting) {
+    typedText.textContent = phrase.slice(0, charIndex + 1);
+    charIndex += 1;
+
+    if (charIndex >= phrase.length) {
+      deleting = true;
+      setTimeout(typeLoop, 1200);
+      return;
+    }
+  } else {
+    typedText.textContent = phrase.slice(0, charIndex - 1);
+    charIndex -= 1;
+
+    if (charIndex <= 0) {
+      deleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+    }
+  }
+
+  setTimeout(typeLoop, deleting ? 36 : 88);
+}
+
+if (typedText) {
+  typeLoop();
+}
+
+const reveals = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
       observer.unobserve(entry.target);
     }
   });
-},{ threshold:0.2 });
-faders.forEach(fade => appearOnScroll.observe(fade));
+}, { threshold: 0.12 });
 
-// Dynamic year
-document.getElementById("year").textContent = new Date().getFullYear();
+reveals.forEach((element) => revealObserver.observe(element));
 
-// Project Modal
-const modal = document.getElementById("project-modal");
-const modalTitle = document.getElementById("modal-title");
-const modalDesc = document.getElementById("modal-desc");
-const modalLink = document.getElementById("modal-link");
-const closeBtn = document.querySelector(".close-btn");
+if (form) {
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
 
-document.querySelectorAll(".project-card .btn-small").forEach(btn => {
-  btn.addEventListener("click", e => {
-    e.preventDefault();
-    const card = e.target.closest(".project-card");
-    modalTitle.textContent = card.querySelector("h3").textContent;
-    modalDesc.textContent = card.querySelector("p").textContent;
-    modalLink.href = "#";
-    modal.style.display = "flex";
+    if (formStatus) {
+      formStatus.textContent = 'Thank you — your message is ready to be sent.';
+    }
+
+    form.reset();
   });
-});
-
-closeBtn.addEventListener("click", () => modal.style.display="none");
-window.addEventListener("click", e => { if(e.target===modal) modal.style.display="none"; });
-
-// Project filtering
-const filterButtons = document.createElement("div");
-filterButtons.className="filter-buttons";
-filterButtons.innerHTML=`
-  <button class="active" data-filter="all">All</button>
-  <button data-filter="web">Web</button>
-  <button data-filter="ai">AI</button>
-  <button data-filter="iot">IoT</button>
-`;
-document.querySelector(".projects h2").after(filterButtons);
-
-filterButtons.querySelectorAll("button").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.querySelector(".filter-buttons .active").classList.remove("active");
-    btn.classList.add("active");
-    const filter = btn.dataset.filter;
-    document.querySelectorAll(".project-card").forEach(card => {
-      card.style.display = filter==="all" || card.dataset.category===filter ? "block" : "none";
-    });
-  });
-});
-
-
-
-// Configuration des animations ScrollReveal
-ScrollReveal().reveal('.section h2, .section p:not(.typed-text)', {
-    delay: 200,
-    distance: '30px',
-    origin: 'top',
-    interval: 50
-});
-
-// Animation pour la section Vision (gauche et droite)
-ScrollReveal().reveal('.fade-left', {
-    delay: 300,
-    distance: '50px',
-    origin: 'left'
-});
-
-ScrollReveal().reveal('.fade-right', {
-    delay: 300,
-    distance: '50px',
-    origin: 'right'
-});
-
-// Animation pour la section Testimonials (du bas vers le haut avec un intervalle)
-ScrollReveal().reveal('.testimonial-card', {
-    delay: 300,
-    distance: '30px',
-    origin: 'bottom',
-    interval: 200, // Défilement échelonné pour chaque carte
-    easing: 'ease-in-out'
-});
-
-// Conserver l'animation pour les autres éléments (Timeline, etc.)
-ScrollReveal().reveal('.about-content, .skills-grid, .values-grid, .project-grid', {
-    delay: 400,
-    interval: 200,
-    origin: 'bottom'
-});
-
-// Ajout de l'année courante au pied de page
-document.getElementById('year').textContent = new Date().getFullYear();
+}

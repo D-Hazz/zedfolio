@@ -1,450 +1,422 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zedfolio | Portfolio</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    /* Hero Section Styling */
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 80vh;
-      text-align: center;
-      padding: 0 20px;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Zedfolio — portfolio of a software engineering student focused on AI, web, systems and product thinking."
+    />
+    <title>Zedfolio | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="container nav-wrap">
+          <a href="#hero" class="brand" aria-label="Zedfolio home">
+            Zedfolio<span>.</span>
+          </a>
 
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
+          <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+          </nav>
 
-    .hero h1 span {
-      color: #ffffff;
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      min-height: 1.5em;
-      letter-spacing: 0.5px;
-    }
-
-    /* Curseur clignotant */
-    .cursor {
-      display: inline-block;
-      background-color: #ffffff;
-      width: 2px;
-      margin-left: 2px;
-      animation: blink 0.7s infinite;
-    }
-
-    @keyframes blink {
-      0%, 50%, 100% { opacity: 1; }
-      25%, 75% { opacity: 0; }
-    }
-
-    /* Animation de fade-in & slide */
-    .fade-in {
-      display: inline-block;
-      opacity: 0;
-      transform: translateY(10px);
-      animation: fadeSlideIn 0.3s forwards;
-    }
-
-    @keyframes fadeSlideIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-        color: #fb00ff;
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-        color: #ffffff;
-      }
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
-      .hero .btn {
-        font-size: 0.9rem;
-      }
-    }
-</style>
-</head>
-<body>
-  <!-- Navbar -->
-    <div class="navbar-container">
-    <header class="navbar">
-        <div class="navbar-content"> 
-            <a href="#hero" class="logo">
-              <div>Zedfolio<span>.</span></div>
-            </a>
-            <nav id="nav-links">
-                <a href="#about">About</a>                
-                <a href="projets.html">Projects</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-        <div class="nav-actions">
-            <i class="fas fa-moon theme-toggle" id="theme-toggle"></i>
-            <i class="fas fa-bars burger" id="burger"></i>
-            
+          <div class="nav-actions">
+            <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+            <button class="menu-btn" id="menu-toggle" aria-label="Open menu">
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
         </div>
-    </header>
-    </div>
-  <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <h1>Hey, I'm <span>Zed</span></h1>
-    <p class="typed-text"></p>
-    <span class="cursor">&nbsp;</span>
-    <a href="#about" class="btn"><i class="fas fa-user"></i> About Me</a>
-  </section>
+      </header>
 
-  <!-- About -->
-  <section style="display: flex; flex-direction: column; align-items: center;" id="about" class="section about">
-    <h2>Zed Hack</h2>
-    <p class="fade-in"> <i class="fas fa-user"></i>  About Me</p>
-    <div style=" text-align: center; width: 100%; padding: 20px;" class="about-content">
-      <img style="width: 200px; height: 200px; overflow: hidden; border: 10px solid #23062635; border-radius: 50%;" src="img/extended-logo.png" alt="Zed Profile Picture" class="profile-pic" />
-    </div>
-    <p>
-      I’m a software engineering student passionate about web development, AI, and smart systems.  
-      My mindset? <b>Discipline over hype. Progress over perfection.</b>  
-      I create clean, scalable, and meaningful digital experiences.
-    </p>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" class="section skills">
-    <h2><i class="fas fa-code"></i> Skills</h2>
-    <div class="skills-grid">
-      <div class="skill">
-        <div class="skill-header">
-          <i class="fab fa-html5"></i><span>HTML</span>
-        </div>
-        <div class="skill-bar"><div class="progress" data-progress="95"></div></div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-header">
-          <i class="fab fa-css3-alt"></i><span>CSS</span>
-        </div>
-        <div class="skill-bar"><div class="progress" data-progress="90"></div></div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-header">
-          <i class="fab fa-js"></i><span>JavaScript</span>
-        </div>
-        <div class="skill-bar"><div class="progress" data-progress="85"></div></div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-header">
-          <i class="fab fa-python"></i><span>Python</span>
-        </div>
-        <div class="skill-bar"><div class="progress" data-progress="80"></div></div>
-      </div>
-
-      <div class="skill">
-        <div class="skill-header">
-          <i class="fab fa-react"></i><span>React</span>
-        </div>
-        <div class="skill-bar"><div class="progress" data-progress="70"></div></div>
-      </div>
-    </div>
-  </section>
-  <!-- Experience & Education -->
-    <section id="experience" class="section experience">
-    <h2><i class="fas fa-briefcase"></i> Experience & Education</h2>
-    <div class="timeline">
-        <div class="timeline-item fade-in">
-        <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
-        <div class="timeline-content">
-            <h3>Bachelor in Software Engineering</h3>
-            <p class="time">2022 – Present</p>
-            <p>Building strong foundations in algorithms, AI, and smart systems.  
-            Constantly learning to create scalable, meaningful solutions.</p>
-        </div>
-        </div>
-
-        <div class="timeline-item fade-in">
-        <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
-        <div class="timeline-content">
-            <h3>Freelance Web Developer</h3>
-            <p class="time">2023 – Present</p>
-            <p>Worked on real projects involving Django, React, and IoT dashboards.  
-            Focused on clarity, performance, and clean architecture.</p>
-        </div>
-        </div>
-
-        <div class="timeline-item fade-in">
-        <div class="timeline-icon"><i class="fas fa-robot"></i></div>
-        <div class="timeline-content">
-            <h3>AI & Smart Systems Enthusiast</h3>
-            <p class="time">2024 – Now</p>
-            <p>Exploring intelligent systems and automation to create smarter, more connected solutions — where curiosity meets engineering purpose.</p>
-        </div>
-        </div>
-    </div>
-    </section>
-
-    <!-- Philosophy / Values -->
-    <section id="values" class="section values">
-    <h2><i class="fas fa-compass"></i> Philosophy & Values</h2>
-    <div class="values-grid">
-        <div class="value-card fade-in">
-        <i class="fas fa-balance-scale"></i>
-        <h3>Discipline over Hype</h3>
-        <p>I stay consistent. Tools and trends change — discipline keeps me grounded.</p>
-        </div>
-        <div class="value-card fade-in">
-        <i class="fas fa-forward"></i>
-        <h3>Progress over Perfection</h3>
-        <p>Every project is a step forward. I learn, iterate, and grow through building.</p>
-        </div>
-        <div class="value-card fade-in">
-        <i class="fas fa-lightbulb"></i>
-        <h3>Curiosity First</h3>
-        <p>I ask, I explore, I test. Curiosity leads to innovation and understanding.</p>
-        </div>
-    </div>
-    </section>
-
-    <!-- Vision / Future Tech -->
-    <section id="vision" class="section vision">
-        <h2><i class="fas fa-rocket"></i> My Vision</h2>
-        <p>Technologies & Concepts that drive my future work.</p>
-        <div class="marquee-container">
-            <div class="marquee-track marquee-left">
-                <div class="vision-item"><i class="fas fa-brain"></i> AI Integration</div>
-                <div class="vision-item"><i class="fab fa-react"></i> Advanced Frontend</div>
-                <div class="vision-item"><i class="fas fa-server"></i> Serverless/Cloud</div>
-                <div class="vision-item"><i class="fas fa-lock"></i> Cybersecurity</div>
-                <div class="vision-item"><i class="fas fa-chart-line"></i> Big Data</div>
-                <div class="vision-item"><i class="fas fa-microchip"></i> Edge Computing</div>
-                <div class="vision-item"><i class="fas fa-brain"></i> AI Integration</div>
-                <div class="vision-item"><i class="fab fa-react"></i> Advanced Frontend</div>
-                <div class="vision-item"><i class="fas fa-server"></i> Serverless/Cloud</div>
-                <div class="vision-item"><i class="fas fa-lock"></i> Cybersecurity</div>
-                <div class="vision-item"><i class="fas fa-chart-line"></i> Big Data</div>
-                <div class="vision-item"><i class="fas fa-microchip"></i> Edge Computing</div>
+      <main>
+        <section id="hero" class="hero">
+          <div class="container hero-inner">
+            <div class="hero-copy reveal">
+              <p class="eyebrow">Software Engineer • AI • Web • Systems</p>
+              <h1>
+                Hey, I'm <span>Zed</span><br />
+                I build products that feel premium and work hard.
+              </h1>
+              <p class="hero-text" id="typed-text"></p>
+              <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">View projects</a>
+                <a href="#contact" class="btn btn-secondary">Book a call</a>
+              </div>
+              <ul class="mini-stats">
+                <li><strong>4+</strong><span>Years exploring building</span></li>
+                <li><strong>15+</strong><span>Projects shaped</span></li>
+                <li><strong>100%</strong><span>Curiosity-driven</span></li>
+              </ul>
             </div>
-            
-            <div class="marquee-track marquee-right">
-                <div class="vision-item"><i class="fas fa-vr-cardboard"></i> AR/VR</div>
-                <div class="vision-item"><i class="fas fa-cubes"></i> Blockchain Tech</div>
-                <div class="vision-item"><i class="fas fa-robot"></i> Robotics</div>
-                <div class="vision-item"><i class="fas fa-mobile-alt"></i> Native Apps</div>
-                <div class="vision-item"><i class="fas fa-feather-alt"></i> Clean Code</div>
-                <div class="vision-item"><i class="fas fa-heartbeat"></i> Performance</div>
-                <div class="vision-item"><i class="fas fa-vr-cardboard"></i> AR/VR</div>
-                <div class="vision-item"><i class="fas fa-cubes"></i> Blockchain Tech</div>
-                <div class="vision-item"><i class="fas fa-robot"></i> Robotics</div>
-                <div class="vision-item"><i class="fas fa-mobile-alt"></i> Native Apps</div>
-                <div class="vision-item"><i class="fas fa-feather-alt"></i> Clean Code</div>
-                <div class="vision-item"><i class="fas fa-heartbeat"></i> Performance</div>
+
+            <div class="hero-visual reveal">
+              <div class="orb orb-one"></div>
+              <div class="orb orb-two"></div>
+              <div class="profile-card">
+                <div class="badge">Available for work</div>
+                <img src="img/extended-logo.png" alt="Zed profile" />
+                <div class="profile-meta">
+                  <div>
+                    <small>Role</small>
+                    <strong>Full-stack & AI builder</strong>
+                  </div>
+                  <div>
+                    <small>Focus</small>
+                    <strong>Product + systems</strong>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+        </section>
+
+        <section id="about" class="section">
+          <div class="container about-grid">
+            <div class="about-visual reveal">
+              <div class="image-frame">
+                <img src="img/sky.jpg" alt="Profile visual" />
+              </div>
+            </div>
+
+            <div class="about-copy reveal">
+              <p class="section-kicker">About me</p>
+              <h2>Building with discipline, clarity, and purpose.</h2>
+              <p>
+                I’m a software engineering student passionate about web development,
+                AI, IoT, and smart systems. My mindset is simple: discipline over hype,
+                consistency over noise, and progress over perfection.
+              </p>
+              <p>
+                I create digital experiences that are not only visually clean but also
+                strategic, scalable, and meaningful for real people. I enjoy turning
+                complex ideas into products that feel intuitive and perform reliably.
+              </p>
+
+              <div class="about-points">
+                <div>
+                  <i class="fa-solid fa-bolt"></i>
+                  <span>Fast iteration</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-code"></i>
+                  <span>Clean architecture</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-lightbulb"></i>
+                  <span>Product thinking</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" class="section muted-section">
+          <div class="container">
+            <p class="section-kicker center">Skills</p>
+            <h2 class="section-title center">Stack I use to ship real things.</h2>
+
+            <div class="skills-grid">
+              <article class="skill-card reveal">
+                <div class="skill-head"><i class="fa-brands fa-html5"></i> HTML</div>
+                <div class="skill-bar"><span style="width: 95%"></span></div>
+              </article>
+
+              <article class="skill-card reveal">
+                <div class="skill-head"><i class="fa-brands fa-css3-alt"></i> CSS</div>
+                <div class="skill-bar"><span style="width: 92%"></span></div>
+              </article>
+
+              <article class="skill-card reveal">
+                <div class="skill-head"><i class="fa-brands fa-js"></i> JavaScript</div>
+                <div class="skill-bar"><span style="width: 88%"></span></div>
+              </article>
+
+              <article class="skill-card reveal">
+                <div class="skill-head"><i class="fa-brands fa-python"></i> Python</div>
+                <div class="skill-bar"><span style="width: 84%"></span></div>
+              </article>
+
+              <article class="skill-card reveal">
+                <div class="skill-head"><i class="fa-brands fa-react"></i> React</div>
+                <div class="skill-bar"><span style="width: 78%"></span></div>
+              </article>
+
+              <article class="skill-card reveal">
+                <div class="skill-head"><i class="fa-solid fa-microchip"></i> IoT</div>
+                <div class="skill-bar"><span style="width: 80%"></span></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="section">
+          <div class="container">
+            <p class="section-kicker center">Featured work</p>
+            <h2 class="section-title center">Selected products and experiments.</h2>
+
+            <div class="projects-grid">
+              <article class="project-card reveal">
+                <img src="img/greenhouse.jpg" alt="Smart greenhouse project" />
+                <div class="project-body">
+                  <span class="tag">IoT</span>
+                  <h3>Smart Greenhouse</h3>
+                  <p>
+                    Real-time environmental monitoring with a clean control interface for
+                    temperature and humidity tracking.
+                  </p>
+                  <div class="project-meta">
+                    <span><i class="fa-brands fa-python"></i> Python</span>
+                    <span><i class="fa-solid fa-microchip"></i> Sensors</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-card reveal">
+                <img src="img/manager.jpg" alt="BridgeSats project" />
+                <div class="project-body">
+                  <span class="tag">Web</span>
+                  <h3>BridgeSats</h3>
+                  <p>
+                    Inventory and sales dashboard built for operational clarity and better
+                    data visibility.
+                  </p>
+                  <div class="project-meta">
+                    <span><i class="fa-brands fa-python"></i> Django</span>
+                    <span><i class="fa-brands fa-js"></i> JS</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="project-card reveal">
+                <img src="img/extended-logo.png" alt="Nexio project" />
+                <div class="project-body">
+                  <span class="tag">AI</span>
+                  <h3>Nexio</h3>
+                  <p>
+                    AI-assisted product concept exploring smarter team collaboration and
+                    intelligent workflows.
+                  </p>
+                  <div class="project-meta">
+                    <span><i class="fa-brands fa-react"></i> React</span>
+                    <span><i class="fa-solid fa-brain"></i> AI</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" class="section muted-section">
+          <div class="container">
+            <p class="section-kicker center">Experience & learning</p>
+            <h2 class="section-title center">Engineering through practice and curiosity.</h2>
+
+            <div class="timeline">
+              <article class="timeline-item reveal">
+                <div class="timeline-dot"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="timeline-content">
+                  <span class="time">2022 — Present</span>
+                  <h3>Software Engineering student</h3>
+                  <p>
+                    Building strong foundations in algorithms, product logic, systems thinking,
+                    and real-world software design with a focus on meaningful delivery.
+                  </p>
+                </div>
+              </article>
+
+              <article class="timeline-item reveal">
+                <div class="timeline-dot"><i class="fa-solid fa-code"></i></div>
+                <div class="timeline-content">
+                  <span class="time">2023 — Present</span>
+                  <h3>Freelance web developer</h3>
+                  <p>
+                    Designing and shipping websites and interfaces with a strong emphasis on
+                    clarity, performance, and polished user experience.
+                  </p>
+                </div>
+              </article>
+
+              <article class="timeline-item reveal">
+                <div class="timeline-dot"><i class="fa-solid fa-robot"></i></div>
+                <div class="timeline-content">
+                  <span class="time">2024 — Now</span>
+                  <h3>AI & smart systems enthusiast</h3>
+                  <p>
+                    Exploring how intelligent systems, automation, and data can create more
+                    useful experiences and better products.
+                  </p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <p class="section-kicker center">My approach</p>
+            <h2 class="section-title center">How I build what matters.</h2>
+
+            <div class="values-grid">
+              <article class="value-card reveal">
+                <i class="fa-solid fa-balance-scale"></i>
+                <h3>Discipline over hype</h3>
+                <p>I stay consistent and focused on fundamentals instead of trend-chasing.</p>
+              </article>
+
+              <article class="value-card reveal">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                <h3>Progress over perfection</h3>
+                <p>I learn quickly, ship early, and improve with traction and feedback.</p>
+              </article>
+
+              <article class="value-card reveal">
+                <i class="fa-solid fa-lightbulb"></i>
+                <h3>Curiosity first</h3>
+                <p>Every problem is a chance to discover, test, and build something smarter.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section muted-section">
+          <div class="container">
+            <p class="section-kicker center">The future I’m building toward</p>
+            <h2 class="section-title center">AI, systems, modern interfaces, and better tools.</h2>
+
+            <div class="marquee-wrap">
+              <div class="marquee-track">
+                <span>AI integration</span>
+                <span>Web products</span>
+                <span>Cloud systems</span>
+                <span>Embedded systems</span>
+                <span>Data-driven design</span>
+                <span>Cybersecurity</span>
+                <span>AI integration</span>
+                <span>Web products</span>
+                <span>Cloud systems</span>
+                <span>Embedded systems</span>
+                <span>Data-driven design</span>
+                <span>Cybersecurity</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section testimonials">
+          <div class="container">
+            <p class="section-kicker center">Testimonials</p>
+            <h2 class="section-title center">People I’ve worked with value the quality.</h2>
+
+            <div class="testimonials-grid">
+              <article class="testimonial reveal">
+                <p>“Zed delivered a thoughtful product with real polish and attention to detail.”</p>
+                <div class="testimonial-person">
+                  <strong>Alex R.</strong>
+                  <span>CEO, TechStart</span>
+                </div>
+              </article>
+
+              <article class="testimonial reveal">
+                <p>“Excellent communication, clear thinking, and strong execution from start to finish.”</p>
+                <div class="testimonial-person">
+                  <strong>Maria D.</strong>
+                  <span>Project Manager</span>
+                </div>
+              </article>
+
+              <article class="testimonial reveal">
+                <p>“He combines technical skills with a product mindset that makes projects better.”</p>
+                <div class="testimonial-person">
+                  <strong>Ben K.</strong>
+                  <span>CTO, DataCorp</span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+          <div class="container contact-wrap">
+            <div class="contact-copy reveal">
+              <p class="section-kicker">Let’s build</p>
+              <h2>Need a developer who can turn ideas into real product value?</h2>
+              <p>
+                I’m open to freelance work, collaborations, and ambitious digital projects.
+              </p>
+              <div class="contact-links">
+                <a href="https://wa.me/243971734080" target="_blank" rel="noreferrer"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://github.com/D-Hazz" target="_blank" rel="noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/zed-ev-59ba68390" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+              </div>
+            </div>
+
+            <form id="contact-form" class="contact-form reveal">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required />
+              </div>
+
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required />
+              </div>
+
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary submit-btn">Send message</button>
+              <p id="form-status" aria-live="polite"></p>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <div>
+            <a href="#hero" class="brand footer-brand">Zedfolio<span>.</span></a>
+            <p>Software Engineering student building for a smarter, cleaner digital future.</p>
+          </div>
+
+          <div class="footer-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#contact">Contact</a>
+          </div>
+
+          <div class="socials">
+            <a href="https://github.com/D-Hazz" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/zed-ev-59ba68390" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://wa.me/243971734080" target="_blank" rel="noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="https://x.com/ZedHazz14919" target="_blank" rel="noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
         </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section contact">
-      <h2><i class="fas fa-paper-plane"></i> Get in Touch</h2>
-      <p>Interested in collaborating or have a question? Let's talk <i class="fas fa-arrow-down"></i></p>
-
-      <form id="contact-form">
-        <div class="form-group">
-          <input type="text" name="name" id="name" placeholder="Your Name" required />
-          <i class="fas fa-user"></i>
+        <div class="container footer-bottom">
+          <span>© <span id="year"></span> Zedfolio</span>
+          <span>Built with discipline and curiosity.</span>
         </div>
-        <div class="form-group">
-          <input type="email" name="email" id="email" placeholder="Your Email" required />
-          <i class="fas fa-envelope"></i>
-        </div>
-        <div class="form-group">
-          <textarea name="message" id="message" placeholder="Your Message" required></textarea>
-          <i class="fas fa-comment-dots"></i>
-        </div>
-
-        <!-- Bouton avec animation -->
-        <button type="submit" class="btn" id="send-btn">
-          <span class="btn-text"><i class="fas fa-paper-plane"></i> Send Message</span>
-          <span class="btn-loader"></span>
-          <span class="btn-check"><i class="fas fa-check"></i></span>
-        </button>
-      </form>
-
-      <div id="form-status" class="fade-in"></div>
-    </section>
-
-<!-- Footer amélioré -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-about">
-        <h3>Zedfolio<span>.</span></h3>
-        <p>Software Engineering Student | Building with discipline, curiosity, and purpose.</p>
-      </div>
-
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-
-        <div class="social-icons">
-          <a href="https://wa.me/243971734080"><i class="fab fa-whatsapp"></i></a>
-          <a href="https://github.com/D-Hazz"><i class="fab fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/zed-ev-59ba68390?trk=contact-info"><i class="fab fa-linkedin"></i></a>
-          <a href="https://x.com/ZedHazz14919?t=i3IozdK9z64u0hyMxMN5jg&s=09"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/dado.hazz?igsh=d2gwcGN2ZGZ4ZGlt"><i class="fab fa-instagram"></i></a>
-           <a href="https://www.facebook.com/hakizuhorahozidazem.hakizuhoraho/"><i class="fab fa-facebook"></i></a>
-           <a href="https://discord.com/channels/heavenly_tiger_17975"><i class="fab fa-discord"></i></a>
-           <a href="https://t.me/ZedHakiza"><i class="fab fa-telegram"></i></a>
-           <a href="#"><i class="fab fa-medium"></i></a>
-           <a href="https://pin.it/59oWuPI2w"><i class="fab fa-pinterest"></i></a>
-           <a href="https://youtube.com/@zedhazz-b7k?si=OXVsf_2YTPYKF7Du"><i class="fab fa-youtube"></i></a>
-
-           
-        </div>
-      </div>
+      </footer>
     </div>
-    <p class="footer-copy">© <span id="year"></span> Zedfolio — Built with discipline & curiosity ⚙️</p>
-  </footer>
 
-
-
-    <script>
-    const texts = [
-    "Software Engineering Student",
-    "Web Developer",
-    "Curious Technologist"
-    ];
-
-    let currentTextIndex = 0;
-    let charIndex = 0;
-    const typedText = document.querySelector('.typed-text');
-    const typingSpeed = 100; // vitesse d’apparition
-    const erasingSpeed = 40; // vitesse de suppression
-    const delayBetween = 2000; // pause entre les textes
-
-    function type() {
-    if (charIndex < texts[currentTextIndex].length) {
-        const span = document.createElement('span');
-        span.textContent = texts[currentTextIndex].charAt(charIndex);
-        span.classList.add('fade-in');
-        typedText.appendChild(span);
-        charIndex++;
-        setTimeout(type, typingSpeed);
-    } else {
-        setTimeout(erase, delayBetween);
-    }
-    }
-
-    function erase() {
-    if (charIndex > 0) {
-        typedText.removeChild(typedText.lastChild);
-        charIndex--;
-        setTimeout(erase, erasingSpeed);
-    } else {
-        currentTextIndex++;
-        if (currentTextIndex >= texts.length) currentTextIndex = 0;
-        setTimeout(type, 800);
-    }
-    }
-
-    // Lancer l'animation après chargement
-    document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(type, 500);
-    });
-    </script>
-
-
-  <script src="https://unpkg.com/scrollreveal"></script>
-
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-(function() {
-  emailjs.init("602CPH3gd6y_FsGnv"); // ✅ ta clé publique EmailJS
-})();
-
-const form = document.getElementById("contact-form");
-const status = document.getElementById("form-status");
-const sendBtn = document.getElementById("send-btn");
-const btnText = sendBtn.querySelector(".btn-text");
-const btnLoader = sendBtn.querySelector(".btn-loader");
-const btnCheck = sendBtn.querySelector(".btn-check");
-
-form.addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  // 🔵 État d’envoi
-  status.textContent = "Sending...";
-  status.className = "sending visible";
-  sendBtn.disabled = true;
-
-  btnText.style.opacity = "0";
-  btnLoader.style.opacity = "1";
-  btnCheck.style.opacity = "0";
-
-  emailjs.sendForm("service_5rgg6cw", "template_5s4kzg3", this)
-    .then(() => {
-      // ✅ Succès
-      status.textContent = "Message sent successfully!";
-      status.className = "success visible";
-      btnLoader.style.opacity = "0";
-      btnCheck.style.opacity = "1";
-      form.reset();
-    })
-    .catch(err => {
-      console.error(err);
-      status.textContent = "Oops! Something went wrong. Try again.";
-      status.className = "error visible";
-      btnLoader.style.opacity = "0";
-      btnText.style.opacity = "1";
-    })
-    .finally(() => {
-      // 🔁 Reset après délai
-      setTimeout(() => {
-        btnCheck.style.opacity = "0";
-        btnText.style.opacity = "1";
-        sendBtn.disabled = false;
-        status.className = "";
-        status.textContent = "";
-      }, 4000);
-    });
-});
-</script>
-
-
-  <script src="js/main.js"></script>
-    <!-- Floating Contact Button -->
-  <a href="index.html#contact" class="floating-btn fade-in">
-    <i class="fas fa-calendar-alt"></i>
-  </a>
-  <!-- Floating Contact Button -->
-  <a href="https://calendly.com/hakizimanazidane/new-meeting" 
-    class="floating-btn fade-in" 
-    target="_blank" 
-    title="Book a call">
-    <i class="fas fa-headset"></i>
-  </a>
-
-</body>
+    <script src="js/main.js"></script>
+  </body>
 </html>
